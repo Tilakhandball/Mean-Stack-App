@@ -8,7 +8,7 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://max:s8sW8w0BD0kkLsed@cluster0-yj3m3.mongodb.net/node-angular?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }) //nnode-angular in the connection url is the name of the db
+mongoose.connect('mongodb+srv://max:' + process.env.MONGO_ATLAS_PWD + '@cluster0-yj3m3.mongodb.net/node-angular?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }) //nnode-angular in the connection url is the name of the db
   .then(() => {
     console.log('Connected to datatbase');
   })
